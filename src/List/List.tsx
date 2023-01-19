@@ -5,11 +5,9 @@ import { config } from "../config";
 export const List = () => {
   const [list, setList] = useState<{ id: Number; name: string }[]>([]);
   useEffect(() => {
-    axios({ method: "get", url: "http://localhost:3000/entry" }).then(
-      (response) => {
-        setList(response.data);
-      }
-    );
+    axios({ method: "get", url: config.url }).then((response) => {
+      setList(response.data);
+    });
   }, []);
 
   return (

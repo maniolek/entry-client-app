@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { config } from "../config";
 
 export const Form = () => {
   const [name, setName] = useState<string>();
@@ -10,7 +11,7 @@ export const Form = () => {
   const onSubmitClickHandler = () => {
     axios({
       method: "post",
-      url: "http://localhost:3000/entry",
+      url: config.url,
       data: { name: name },
     }).then((response) => {
       setName("");
