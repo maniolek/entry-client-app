@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <h1>Entries</h1>
-
+      <h5>Server: {(window as any).env.HOSTNAME}</h5>
       <Form />
       <List />
     </div>
