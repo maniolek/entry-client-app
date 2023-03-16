@@ -5,7 +5,7 @@ import { config } from "../config";
 export const List = () => {
   const [list, setList] = useState<{ id: Number; name: string }[]>([]);
   useEffect(() => {
-    axios({ method: "get", url: config.url }).then((response) => {
+    axios({ method: "get", url: `${config.url}/entry` }).then((response) => {
       setList(response.data);
     });
   }, []);
