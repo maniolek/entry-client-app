@@ -1,3 +1,5 @@
+import env from "react-dotenv";
+
 export const config = {
-  url: "/api",
+  url: env.API + "/api",
 };

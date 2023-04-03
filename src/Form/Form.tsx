@@ -3,7 +3,7 @@ import { useState } from "react";
 import { config } from "../config";
 
 export const Form = () => {
-  const [name, setName] = useState<string>();
+  const [name, setName] = useState<string>("");
   const onInputChange = (e: any) => {
     setName(e.target.value);
   };
@@ -11,7 +11,7 @@ export const Form = () => {
   const onSubmitClickHandler = () => {
     axios({
       method: "post",
-      url: config.url,
+      url: `${config.url}/entry`,
       data: { name: name },
     }).then((response) => {
       setName("");
