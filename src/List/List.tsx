@@ -10,7 +10,7 @@ export const List = () => {
       setList(response.data);
     });
     axios({ method: "get", url: `${config.url}/rick` }).then((response) => {
-      setRick(decodeURIComponent(response.data));
+      setRick(response.data);
     });
   }, []);
 
